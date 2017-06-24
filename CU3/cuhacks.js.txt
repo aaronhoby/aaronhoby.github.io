@@ -1,0 +1,220 @@
+//cuhack.js
+
+
+var ucData = [
+    {
+      "name": "UC Berkeley",
+      "city": "Berkeley",
+      "state": "CA",
+      "avgGpa": 3.86,
+      "avgSat": 1440,
+      "avgAct": 32,
+      "schoolType": "Public",
+      "totalApp": "82581",
+      "totalAdmit": 14436,
+      "scoreDeadline": "31-Dec",
+      "subtestDeadline": "31-Dec",
+      "chance" : ""
+    },
+    {
+      "name": "UC Davis",
+      "city": "Davis",
+      "state": "CA",
+      "avgGpa": 3.99,
+      "avgSat": 1290,
+      "avgAct": 27,
+      "schoolType": "Public",
+      "totalApp": "67472",
+      "totalAdmit": 28617,
+      "scoredeadline": "31-Jan",
+      "subjectTestdeadline": "31-Jan",
+      "chance" : ""
+    },
+    {
+      "name": "UC Irvine",
+      "city": "Irvine",
+      "state": "CA",
+      "avgGpa": 3.97,
+      "avgSat": 1250,
+      "avgAct": 27,
+      "schoolType": "Public",
+      "totalApp": "77810",
+      "totalAdmit": 31631,
+      "scoreDeadline": "31-Dec",
+      "subtestDeadline": "31-Dec"
+    },
+    {
+      "name": "UC Los Angeles",
+      "city": "Los Angeles",
+      "state": "CA",
+      "avgGpa": 4.33,
+      "avgSat": 1370,
+      "avgAct": 29,
+      "schoolType": "Public",
+      "totalApp": "97121",
+      "totalAdmit": 17474,
+      "scoreDeadline": "15-Jan",
+      "subtestDeadline": "15-Jan",
+      "chance" : ""
+    },
+    {
+      "name": "UC Merced",
+      "city": "Merced",
+      "state": "CA",
+      "avgGpa": 3.56,
+      "avgSat": 1090,
+      "avgAct": 22,
+      "schoolType": "Public",
+      "totalApp": "18620",
+      "totalAdmit": 11288,
+      "scoreDeadline": "15-Jan",
+      "subtestDeadline": "15-Jan",
+    },
+    {
+      "name": "UC Santa Barbara",
+      "city": "Santa Barbara",
+      "state": "CA",
+      "avgGpa": 4.02,
+      "avgSat": 1330,
+      "avgAct": 27,
+      "schoolType": "Public",
+      "totalApp": "77098",
+      "totalAdmit": 27580,
+      "scoreDeadline": "30-Dec",
+      "subtestDeadline": "30-Dec",
+      "chance" : ""
+    },
+    {
+      "name": "UC San Diego",
+      "city": "La Jolla",
+      "state": "CA",
+      "avgGpa": 4,
+      "avgSat": 1350,
+      "avgAct": 29,
+      "schoolType": "Public",
+      "totalApp": "84209",
+      "totalAdmit": 30273,
+      "scoreDeadline": "15-Jan",
+      "subtestDeadline": "15-Jan",
+      "chance" : ""
+    },
+    {
+      "name": "UC Santa Cruz",
+      "city": "Santa Cruz",
+      "state": "CA",
+      "avgGpa": 3.76,
+      "avgSat": 1260,
+      "avgAct": 26,
+      "schoolType": "Public",
+      "totalApp": "47553",
+      "totalAdmit": 27806,
+      "scoreDeadline": "10-Jan",
+      "subtestDeadline": "N/A",
+      "chance" : ""
+    },
+    {
+      "name": "UC Riverside",
+      "city": "Riverside",
+      "state": "CA",
+      "avgGpa": 3.69,
+      "avgSat": 1190,
+      "avgAct": 23,
+      "schoolType": "Public",
+      "totalApp": "42629",
+      "totalAdmit": 28280,
+      "scoreDeadline": "15-Jan",
+      "subtestDeadline": "15-Jan",
+      "chance" : ""
+    },
+    {
+      "name": "UC San Francisco",
+      "city": "San Francisco",
+      "state": "CA",
+      "avgGpa": 3.63,
+      "avgSat": 1140,
+      "avgAct": 26,
+      "schoolType": "Public",
+      "totalApp": "42629",
+      "totalAdmit": 28280,
+      "scoreDeadline": "15-Jan",
+      "subtestDeadline": "15-Jan",
+      "chance" : ""
+    },
+  ];
+
+//PAGE ONE
+//enter user sat/act and gpa
+  //compare w all schools
+  //if user input greater than data: safety
+  //if user input less than data: reach
+  //if one above, one below: target
+window.onload = function() {
+
+var submit = document.getElementById("submit");
+
+submit.onclick = function() {
+  var userGpa = document.getElementById("GPA");
+  if(document.getElementById("test").checked)
+
+  {
+      var userSat = document.getElementById("score");
+  }
+  else
+  {
+      var userAct = document.getElementById("score");
+  }
+    for (var x = 0; x < ucData.length; x++) {
+        	var chance = "";
+        	if((userGpa > ucData[x].avgGpa) && ((userSat > ucData[x].avgSat)||(userAct > ucData[x].avgAct))){
+    	    	ucData[x].chance = "safety";
+            }
+            else if ((userGpa < ucData[x].avgGpa) && ((userSat < ucData[x].avgSat)||(userAct < ucData[x].avgAct))){
+	            ucData[x].chance = "reach";
+            }
+            else {
+                ucData[x].chance = "target";
+            }
+            log.d(chance);
+            //output some information based on chance
+        }
+
+    var i = 0;
+    function loadData(i) {
+        //PAGE TWO
+        ucData.forEach(function(college) {
+          console.log("College: " + college[i].name);
+          console.log("City/State: " + college[i].city + "," + college[i].state);
+          console.log("Avg Gpa" + college[i].avgGpa);
+          console.log("Avg SAT" + college[i].avgSat);
+          console.log("Avg ACT" + college[i].avgAct);
+          console.log("School Type" + college[i].schoolType);
+          console.log("Avg ACT" + college[i].avgAct);
+          console.log("Total Applicants: " + college[i].totalApp) + " Total Admitted: " + college[i].totalAdmit  + "Acceptance Rate: " + (college.totalApp/college.totalAdmit)*100 + "%";
+          console.log("Score Deadline" + college[i].scoreDeadline);
+          console.log("This college is your: " + college[i].chance);
+
+        })
+    }
+    rightarrow.onClick = function() {
+        if(i ==  uc.Data.length){
+
+        }
+        else{
+            i++;
+            loadData(i);
+        }
+    }
+    leftarrow.onclick = function() {
+        if(i === 0){
+
+        }
+        else{
+            i--;
+            loadData(i);
+        }
+    }
+
+};
+
+};
+ 

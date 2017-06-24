@@ -1,0 +1,30 @@
+i{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+
+body {
+    background-image: url("https://st3.depositphotos.com/1005097/14306/v/380/depositphotos_143065347-stock-video-dark-gray-background.jpg");
+	color:#FFFFFF;
+	}
+
+
+paragraph {
+	color:#FFFFFF;
+	font-size: 20px;
+	font-style: normal;
+	font-family:Courier;
+}

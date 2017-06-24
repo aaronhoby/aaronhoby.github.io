@@ -1,0 +1,14 @@
+h1{
+  font-size: 100px;
+}
+
+ p{
+	font-size: 50px;
+  }
+
+  body {
+    background-image: url("bgvcal.png");
+    background-repeat: no-repeat;
+    font-family: 'Merriweather', 'Helvetica Neue', 'Arial', 'sans-serif';
+    color: white;
+}
